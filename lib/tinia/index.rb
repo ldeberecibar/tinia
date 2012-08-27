@@ -38,7 +38,7 @@ module Tinia
           # class name
           d.add_field("type", self.class.base_class.name)
           self.cloud_search_data.each_pair do |k,v|
-            d.add_field(k.to_s, v.to_s)
+            d.add_field(k.to_s, v.is_a?(Array) ? v : v.to_s)
           end
         end
       end
