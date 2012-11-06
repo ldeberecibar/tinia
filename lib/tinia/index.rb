@@ -61,6 +61,7 @@ module Tinia
 
      # class method to add documents
       def cloud_search_delete_document(doc)
+        doc.version += 1
         self.cloud_search_batcher_command(:delete_document, doc)
       end
 
